@@ -39,7 +39,7 @@ public class ABPController {
 
     public ABPController() throws Exception {
         testFrame = new TestFrame();
-        student = new Customer(testFrame.getSize());
+        student = new Customer();
         charMovement = new CharacterMovement();
         stations = new FoodStations();
         abp = new AuBonPainPanel(student, charMovement);

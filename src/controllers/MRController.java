@@ -32,7 +32,7 @@ public class MRController {
     {
         
         TestFrame testFrame = new TestFrame();
-        Customer student = new Customer(new Dimension(800, 600));
+        Customer student = new Customer();
         MeetingRoomMovement charMovement = new MeetingRoomMovement(student);
         mrp = new MeetingRoomPanel(student, charMovement);
         charMovement.setStations(mrp.getTable(), mrp.getProjector());
