@@ -21,14 +21,23 @@ public class ClassroomPanel extends JPanel {
     
     private JLabel mousePointerInfo;
     
-    //Rectangles for the teleport
-    private final int ABPTeleportHEIGHT = 40;
-    private final int ABPTeleportWIDTH = 42;
+    //Height and width for the rectangles
+    private final int height = 40;
+    private final int width = 42;
+
+    //Rectangles for the teleport    
     public Rectangle ABPTeleport;
+    public Rectangle Room206Teleport;
+    public Rectangle MeetingRoomTeleport;
+    public Rectangle CybertoriumTeleport;
+
+    Customer student;
+    
+    public ClassroomPanel () {
+        
+    }
     
     public ClassroomPanel (ClassroomController parentController) {
-        //super();
-        
         this.theClassroomController = parentController;
         
         setSize(CLASS_WIDTH, CLASS_HEIGHT);
@@ -41,7 +50,7 @@ public class ClassroomPanel extends JPanel {
         setVisible(true);
         
         initializingRectangle();
-        setRectBounds();
+//        setBounds();
         
         this.addMouseMotionListener(new MouseAdapter() {
             @Override
@@ -67,10 +76,10 @@ public class ClassroomPanel extends JPanel {
     }
     
     public void initializingRectangle() {
-        ABPTeleport = new Rectangle();
-    }
-    
-    public void setRectBounds () {
-        ABPTeleport.setBounds(567,279,ABPTeleportHEIGHT,ABPTeleportWIDTH);
+        ABPTeleport = new Rectangle(545, 205, height, width);
+        Room206Teleport = new Rectangle(427, 97, height, width);
+        MeetingRoomTeleport = new Rectangle(300, 131, height, width);
+        CybertoriumTeleport = new Rectangle(0, 267, height, width);
     }
 }
+

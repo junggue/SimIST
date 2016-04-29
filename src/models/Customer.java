@@ -10,7 +10,7 @@ package models;
  * @author Paul
  */
 import java.awt.*;
-public class Customer extends Rectangle{
+public class Customer extends Rectangle {
     private String name;
     private String gender;
     private String[] animation;

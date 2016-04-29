@@ -8,11 +8,11 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 
-public class CharacterMovement  implements KeyListener{
+public class CharacterMovement  implements KeyListener {
     //Classes from other packets
     Customer student;
     
-    private String animation = "left1.png";
+    private String animation = "right2.png";
     private String facing = "";
     private boolean isInteracting = false;
     private int frame = 0;
@@ -143,5 +143,4 @@ public class CharacterMovement  implements KeyListener{
     {
         stationNumber = set;
     }
-    
 }

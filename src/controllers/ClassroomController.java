@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.*;
 import static javax.swing.JFrame.EXIT_ON_CLOSE;
 import models.*;
+import views.Cybertorium;
 
 /**
  *
@@ -24,12 +25,12 @@ public class ClassroomController {
     private Timer gameTimer;
     
     // Attributes related to character
-    private Customer student;
+    public Customer student;
     private CharacterMovement charMovement;
-
-    //Collision
-    boolean collision = false;
     
+    private int height;
+    private int width;
+
     public ClassroomController() {
         // bring the character and characterMoevement
         student = new Customer();
@@ -62,10 +63,43 @@ public class ClassroomController {
     }
     
     
-    public void collision () {
-        if (student.intersects(classroomPanel.ABPTeleport))
-            System.out.println("Collision");
-//            collision = true;
+    public void collision (){
+//        this.height = student.height;
+//        this.width = student.width;
+//        System.out.println ("This is the height: " + height);
+//        System.out.println ("This is the width: " + width);
+        if (student.intersects(classroomPanel.ABPTeleport)) {
+            try {
+                    gameTimer.stop();
+                    ABPController ABPpanel = new ABPController();
+                } catch (Exception ex) {
+                    System.err.println(ex);
+                }
+        }
+        
+        if (student.intersects(classroomPanel.Room206Teleport)) {
+            try {
+                    gameTimer.stop();
+                    RoomController room206 = new RoomController();
+                } catch (Exception ex) {
+                    System.err.println(ex);
+                }
+        }
+        if (student.intersects(classroomPanel.CybertoriumTeleport)) {
+            try {
+                    gameTimer.stop();
+                    FrameTester frame = new FrameTester(new Cybertorium());
+                } catch (Exception ex) {
+                    System.err.println(ex);
+                }
+        }
+        if (student.intersects(classroomPanel.MeetingRoomTeleport)) {
+            try {
+                    gameTimer.stop();
+                    MRController meetingRoom = new MRController();
+                } catch (Exception ex) {
+                    System.err.println(ex);
+                }
+        }
     }
-    
 }
