@@ -30,12 +30,9 @@ public class ClassroomPanel extends JPanel {
     public Rectangle Room206Teleport;
     public Rectangle MeetingRoomTeleport;
     public Rectangle CybertoriumTeleport;
-
-    Customer student;
     
-    public ClassroomPanel () {
-        
-    }
+    //initialize the character
+    Customer student;
     
     public ClassroomPanel (ClassroomController parentController) {
         this.theClassroomController = parentController;
@@ -50,13 +47,11 @@ public class ClassroomPanel extends JPanel {
         setVisible(true);
         
         initializingRectangle();
-//        setBounds();
         
         this.addMouseMotionListener(new MouseAdapter() {
             @Override
             public void mouseMoved(MouseEvent e)
             {
-//                System.out.println(e.getPoint());
                 mousePointerInfo.setText(e.getPoint().toString());
             }
         });
@@ -65,8 +60,6 @@ public class ClassroomPanel extends JPanel {
         this.setFocusable(true);
     }
 
-    // reference: http://stackoverflow.com/questions/28017537/how-do-you-draw-and-fill-a-parallelogram-in-java-swing
-    // I learned how to create diverse shape form other than rectangles and circles from the above link
     @Override
     public void paintComponent(Graphics g) {
         super.paintComponent(g);

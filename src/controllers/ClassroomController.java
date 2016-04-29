@@ -64,13 +64,13 @@ public class ClassroomController {
     
     
     public void collision (){
-//        this.height = student.height;
-//        this.width = student.width;
-//        System.out.println ("This is the height: " + height);
-//        System.out.println ("This is the width: " + width);
+
         if (student.intersects(classroomPanel.ABPTeleport)) {
             try {
+                    // stopping the timer prevents the timer keep running and causing a bug
+                    // by going into the differnet map, the classroom disapears
                     gameTimer.stop();
+                    classroomFrame.setVisible(false);
                     ABPController ABPpanel = new ABPController();
                 } catch (Exception ex) {
                     System.err.println(ex);
@@ -80,6 +80,7 @@ public class ClassroomController {
         if (student.intersects(classroomPanel.Room206Teleport)) {
             try {
                     gameTimer.stop();
+                    classroomFrame.setVisible(false);
                     RoomController room206 = new RoomController();
                 } catch (Exception ex) {
                     System.err.println(ex);
@@ -88,6 +89,7 @@ public class ClassroomController {
         if (student.intersects(classroomPanel.CybertoriumTeleport)) {
             try {
                     gameTimer.stop();
+                    classroomFrame.setVisible(false);
                     FrameTester frame = new FrameTester(new Cybertorium());
                 } catch (Exception ex) {
                     System.err.println(ex);
@@ -96,7 +98,9 @@ public class ClassroomController {
         if (student.intersects(classroomPanel.MeetingRoomTeleport)) {
             try {
                     gameTimer.stop();
+                    classroomFrame.setVisible(false);
                     MRController meetingRoom = new MRController();
+                    
                 } catch (Exception ex) {
                     System.err.println(ex);
                 }
